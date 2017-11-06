@@ -1,6 +1,6 @@
 {
   "name": "js-byte-version-encoder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Encode semver into an integer",
   "main": "index.js",
   "scripts": {
