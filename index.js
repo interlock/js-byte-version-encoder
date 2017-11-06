@@ -1,3 +1,5 @@
+/* Licensed under MIT, see LICENSE.md */
+
 const maxWord = 0xffff;
 
 /**
