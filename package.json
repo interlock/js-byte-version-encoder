@@ -4,11 +4,13 @@
   "description": "Encode semver into an integer",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint ./*.js"
   },
   "author": "James Sapara <james.sapara@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^4.11.0",
     "jest": "^21.2.1"
   }
 }
