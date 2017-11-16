@@ -17,6 +17,14 @@ describe('decodeVersion', function() {
     expect(version.decodeVersion(0x0000FFFF, 2)).toEqual('0.65535');
   });
 
+  it('handles a string as a number', function() {
+    expect(version.decodeVersion('12')).toEqual('0.0.12');
+  });
+
+  it('full encode/decode with three words', function() {
+    expect(version.decodeVersion(version.encodeVersion('1.2.3', 3))).toEqual('1.2.3');
+  });
+
   it('works with m.n.p', function() {
     expect(version.decodeVersion(0xFFFF0000FFFF)).toEqual('65535.0.65535');
   });

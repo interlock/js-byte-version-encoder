@@ -1,7 +1,5 @@
 /* Licensed under MIT, see LICENSE.md */
 
-var maxWord = 0xffff;
-
 function padStart(string, count, fill) {
   count = count || 4;
   fill = fill || '0';
@@ -15,12 +13,17 @@ function padStart(string, count, fill) {
  * Decode a version made up of words, default is two (firmware style)
  * but supports 3 (semver style).
  */
-function decodeVersion(v, words ) {
+function decodeVersion(version, words ) {
+  var v = parseInt(version, 10);
+  var h = v.toString(16);
+  var p;
   words = words || 3;
 
   var parts = [];
   for (var i = 0; i < words; i += 1) {
-    parts.push((v & (maxWord << 16 * i)) >>> 16 * i);
+    p = h.substr(-4,4);
+    h = h.substr(0, h.length - 4);
+    parts.push((p === '' ? 0 : parseInt('0x' + p)));
   }
 
   return parts.reverse().join('.');
