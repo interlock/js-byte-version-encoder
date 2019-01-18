@@ -1,6 +1,6 @@
 {
   "name": "js-byte-version-encoder",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Encode semver into an integer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
     "test": "npm run build && npm run lint && jest",
     "lint": "tslint -p ./tsconfig.json"
   },
-  "author": "James Sapara <james.sapara@gmail.com>",
+  "author": "June Sapara <pixelgirl@protonmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^23.3.12",
