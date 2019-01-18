@@ -4,6 +4,9 @@ A dumb library to encode `1.1 => 0x10001` and decode `0x10008 => 1.8`
 
 ## Release Notes
 
+### 0.4.0
+- Converted to TypeScript
+
 ### 0.3.0
 - Fixed bug with decoding > 2 word versions
 
