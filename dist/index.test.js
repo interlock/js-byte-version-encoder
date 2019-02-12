@@ -18,6 +18,18 @@ describe('decodeVersion', () => {
     it('works with max major', () => {
         expect(version.decodeVersion(0xFFFF0000, 2)).toEqual('65535.0');
     });
+    it('minor boundry min', () => {
+        expect(version.decodeVersion(1, 2)).toEqual('0.1');
+    });
+    it('minor boundry max', () => {
+        expect(version.decodeVersion(65535, 2)).toEqual('0.65535');
+    });
+    it('major boundry min', () => {
+        expect(version.decodeVersion(65536, 2)).toEqual('1.0');
+    });
+    it('major boundry max', () => {
+        expect(version.decodeVersion(0xFFFF0000, 2)).toEqual('65535.0');
+    });
     it('works with max minor', () => {
         expect(version.decodeVersion(0x0000FFFF, 2)).toEqual('0.65535');
     });
@@ -49,6 +61,9 @@ describe('encodeVersion', () => {
     });
     it('works on max three digit', () => {
         expect(version.encodeVersion('65535.0.0')).toEqual(0xffff00000000);
+    });
+    it('a', () => {
+        expect(version.encodeVersion('9.0047')).toEqual(0xffff00000000);
     });
 });
 describe('padStart', () => {

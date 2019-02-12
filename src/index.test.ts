@@ -13,6 +13,22 @@ describe('decodeVersion', () => {
     expect(version.decodeVersion(0xFFFF0000, 2)).toEqual('65535.0');
   });
 
+  it('minor boundry min', () => {
+    expect(version.decodeVersion(1, 2)).toEqual('0.1');
+  });
+
+  it('minor boundry max', () => {
+    expect(version.decodeVersion(65535, 2)).toEqual('0.65535');
+  });
+
+  it('major boundry min', () => {
+    expect(version.decodeVersion(65536, 2)).toEqual('1.0');
+  });
+
+  it('major boundry max', () => {
+    expect(version.decodeVersion(0xFFFF0000, 2)).toEqual('65535.0');
+  });
+
   it('works with max minor', () => {
     expect(version.decodeVersion(0x0000FFFF, 2)).toEqual('0.65535');
   });
