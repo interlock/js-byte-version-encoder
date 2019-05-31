@@ -4,7 +4,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "Purpose This library can be used to take a semver version and convert it to an integer in JS. It can be useful for sorting, or if you are packing a version into bytes as an int/long.\nExamples Encoding a string semver, with two components:  const numericVersion = encodeVersion(\"1.20\"); console.log(numericVersion); // 12345  Decoding a number to semver string:\n const semVer = decodeVersion(12345); console.log(semVer); // 1.1 const semVerThree = decodeVersion(123451, 3); console.log(semVerThree); // 1.2.2  "
+	"content": "Purpose This library can be used to take a semver version and convert it to an integer in JS. It can be useful for sorting, or if you are packing a version into bytes as an int/long.\nExamples Encoding a string semver, with two components:  const numericVersion = encodeVersion(\"1.20\"); console.log(numericVersion); // 12345  Decoding a number to semver string:\n const semVer = decodeVersion(12345); console.log(semVer); // 1.1 const semVerThree = decodeVersion(123451, 3); console.log(semVerThree); // 1.2.2   Widget      \" /      jQuery(\"input[name=to_semver]\").on('click', function() { var v = jQuery(\"input[name=numver]\").val(); if (v \u0026\u0026 v.length  0) { var semver = JSByteVersionEncode.decodeVersion(v); jQuery(\"input[name=semver]\").val(semver); } }); jQuery(\"input[name=to_numver]\").on('click', function() { var v = jQuery(\"input[name=semver]\").val(); if (v \u0026\u0026 v.length  0) { var semver = JSByteVersionEncode.encodeVersion(v); jQuery(\"input[name=numver]\").val(semver); } });  "
 },
 {
 	"uri": "https://interlock.github.io/js-byte-version-encoder/categories/",
