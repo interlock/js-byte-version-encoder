@@ -6,8 +6,10 @@
   "bugs": "https://github.com/interlock/js-byte-version-encoder/issues",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "browser": "dist/browser.js",
   "scripts": {
     "build": "tsc",
+    "browserify": "browserify ./dist/index.js -s JSByteVersionEncoder -o ./dist/browser.js",
     "test": "npm run build && npm run lint && jest",
     "lint": "tslint -p ./tsconfig.json",
     "docs": "cd _docs && hugo && cd .. && cp -R ./_docs/public/* ./docs"
@@ -16,6 +18,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^23.3.12",
+    "browserify": "^16.2.3",
     "jest": "^23.6.0",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"

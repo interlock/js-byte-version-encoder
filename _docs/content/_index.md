@@ -23,3 +23,35 @@ const semVerThree = decodeVersion(123451, 3);
 console.log(semVerThree);
 // 1.2.2
 </pre>
+
+<script src="./bundle.js"></script>
+
+<h2>Widget</h2>
+
+<form>
+  <table>
+  <tr>
+    <td><input name="semver" placeholder="v1.2.3" size="15" /></td>
+    <td><input type="button" name="to_semver" value="<= Semver"/></td>
+    <td><input type="button" name="to_numver" value="Number =>" /></td>
+    <td><input name="numver" placeholder="65433" size="15"/></td>
+  </tr>
+  </table>
+</form>
+
+<script>
+  jQuery("input[name=to_semver]").on('click', function() {
+    var v = jQuery("input[name=numver]").val();
+    if (v && v.length > 0) {
+      var semver = JSByteVersionEncode.decodeVersion(v);
+      jQuery("input[name=semver]").val(semver);
+    }
+  });
+   jQuery("input[name=to_numver]").on('click', function() {
+    var v = jQuery("input[name=semver]").val();
+    if (v && v.length > 0) {
+      var semver = JSByteVersionEncode.encodeVersion(v);
+      jQuery("input[name=numver]").val(semver);
+    }
+  });
+</script>
