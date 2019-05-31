@@ -4,6 +4,11 @@ A dumb library to encode `1.1 => 0x10001` and decode `0x10008 => 1.8`
 
 ## Release Notes
 
+### 0.4.1
+- Very light docs have been added
+- Builds a browser packed version
+- Docs have an example of converting between the two formats
+
 ### 0.4.0
 - Converted to TypeScript
 
