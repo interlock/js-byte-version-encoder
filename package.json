@@ -8,7 +8,7 @@
   "types": "dist/index.d.ts",
   "browser": "dist/browser.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run browserify",
     "browserify": "browserify ./dist/index.js -s JSByteVersionEncoder -o ./dist/browser.js",
     "test": "npm run build && npm run lint && jest",
     "lint": "tslint -p ./tsconfig.json",

@@ -62,9 +62,6 @@ describe('encodeVersion', () => {
     it('works on max three digit', () => {
         expect(version.encodeVersion('65535.0.0')).toEqual(0xffff00000000);
     });
-    it('a', () => {
-        expect(version.encodeVersion('9.0047')).toEqual(0xffff00000000);
-    });
 });
 describe('padStart', () => {
     it('empty string', () => {
