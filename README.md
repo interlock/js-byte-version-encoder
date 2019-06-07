@@ -2,6 +2,8 @@
 
 A dumb library to encode `1.1 => 0x10001` and decode `0x10008 => 1.8`
 
+[Docs](https://interlock.github.io/js-byte-version-encoder/)
+
 ## Release Notes
 
 ### 0.4.1
