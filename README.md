@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/interlock/js-byte-version-encoder.svg?branch=master)](https://travis-ci.org/interlock/js-byte-version-encoder)
+
 ## Byte Version Encoder
 
 A dumb library to encode `1.1 => 0x10001` and decode `0x10008 => 1.8`
