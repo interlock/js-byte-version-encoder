@@ -1,6 +1,6 @@
 {
   "name": "js-byte-version-encoder",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Encode semver into an integer",
   "homepage": "https://interlock.github.io/js-byte-version-encoder/",
   "bugs": "https://github.com/interlock/js-byte-version-encoder/issues",
