@@ -2,8 +2,12 @@ export declare function padStart(input: string, count?: number, fill?: string): 
 /**
  * Decode a version made up of words, default is two (firmware style)
  * but supports 3 (semver style).
+ *
+ * @param version number|string
+ * @param words number
+ * @param padding number
  */
-export declare function decodeVersion(version: number | string, words?: number): string;
+export declare function decodeVersion(version: number | string, words?: number, padding?: number, padFirst?: boolean): string;
 /**
  * Encodes a string version to a number
  * For major.minor, it is a 32bit int

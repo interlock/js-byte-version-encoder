@@ -9,7 +9,7 @@
   "browser": "dist/browser.js",
   "scripts": {
     "build": "tsc && npm run browserify",
-    "browserify": "browserify ./dist/index.js -s JSByteVersionEncoder -o ./dist/browser.js",
+    "browserify": "browserify ./src/index.ts --standalone JSByteVersionEncoder -p [ tsify ] > ./dist/browser.js",
     "test": "npm run build && npm run lint && jest",
     "lint": "tslint -p ./tsconfig.json",
     "docs": "cd _docs && hugo && cd .. && cp -R ./_docs/public/* ./docs"
@@ -20,6 +20,7 @@
     "@types/jest": "^23.3.12",
     "browserify": "^16.2.3",
     "jest": "^23.6.0",
+    "tsify": "^4.0.1",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"
   }

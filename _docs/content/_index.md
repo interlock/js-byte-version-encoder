@@ -36,21 +36,44 @@ console.log(semVerThree);
     <td><input type="button" name="to_numver" value="Number =>" /></td>
     <td><input name="numver" placeholder="65433" size="15"/></td>
   </tr>
+  <tr>
+  <td>Bytes:</td>
+  <td>
+    <select name="words">
+      <option value="2" selected>2</option>
+      <option value="3">3</option>
+    </select>
+  </td>
+  </tr>
+  <tr>
+  <td>Padding:</td>
+  <td>
+    <select name="padding">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3" selected>3</option>
+    </select>
+  </td>
+  </tr>
   </table>
 </form>
 
 <script>
   jQuery("input[name=to_semver]").on('click', function() {
     var v = jQuery("input[name=numver]").val();
+    var words = jQuery("select[name=words]").val();
+    var padding = jQuery("select[name=padding]").val();
     if (v && v.length > 0) {
-      var semver = JSByteVersionEncode.decodeVersion(v);
+      var semver = JSByteVersionEncoder.decodeVersion(v, words, padding);
       jQuery("input[name=semver]").val(semver);
     }
   });
    jQuery("input[name=to_numver]").on('click', function() {
     var v = jQuery("input[name=semver]").val();
     if (v && v.length > 0) {
-      var semver = JSByteVersionEncode.encodeVersion(v);
+      v = v.replace(/[^0123456789\.]/g, '');
+      var semver = JSByteVersionEncoder.encodeVersion(v);
       jQuery("input[name=numver]").val(semver);
     }
   });
