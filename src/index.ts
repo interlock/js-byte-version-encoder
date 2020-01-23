@@ -10,8 +10,17 @@ export function padStart(input: string, count: number = 4, fill: string = '0') {
 /**
  * Decode a version made up of words, default is two (firmware style)
  * but supports 3 (semver style).
+ *
+ * @param version number|string
+ * @param words number
+ * @param padding number
  */
-export function decodeVersion(version: number|string, words: number = 3): string {
+export function decodeVersion(
+  version: number|string,
+  words: number = 3,
+  padding: number = 0,
+  padFirst: boolean = false,
+  ): string {
   let v: number;
   if (typeof version === 'string') {
     v = parseInt(version, 10);
@@ -28,7 +37,12 @@ export function decodeVersion(version: number|string, words: number = 3): string
     parts.push((p === '' ? 0 : parseInt('0x' + p, 16)));
   }
 
-  return parts.reverse().join('.');
+  return parts.reverse().map((part, index) => {
+    if ((padFirst === true && index === 0) || index > 0) {
+      return padStart(part.toString(), padding);
+    }
+    return part.toString();
+  }).join('.');
 }
 
 /**

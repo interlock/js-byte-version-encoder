@@ -44,6 +44,14 @@ describe('decodeVersion', () => {
   it('works with m.n.p', () => {
     expect(version.decodeVersion(0xFFFF0000FFFF)).toEqual('65535.0.65535');
   });
+
+  it('pads, except for the first', () => {
+    expect(version.decodeVersion(version.encodeVersion('1.2.3'), 3, 2)).toEqual('1.02.03');
+  });
+
+  it('pads, including the first', () => {
+    expect(version.decodeVersion(version.encodeVersion('1.2.3'), 3, 2, true)).toEqual('01.02.03');
+  });
 });
 
 describe('encodeVersion', () => {
