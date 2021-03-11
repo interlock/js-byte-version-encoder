@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/interlock/js-byte-version-encoder.svg?branch=master)](https://travis-ci.org/interlock/js-byte-version-encoder)
+[![Node.js CI](https://github.com/interlock/js-byte-version-encoder/actions/workflows/node.js.yml/badge.svg)](https://github.com/interlock/js-byte-version-encoder/actions/workflows/node.js.yml)
 
 ## Byte Version Encoder
 
